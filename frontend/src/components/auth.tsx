@@ -1,4 +1,4 @@
-import { SignupInput } from "@dalewind2331/common";
+import type { SignupInput } from "@dalewind2331/common";
 import { useState, type ChangeEvent } from "react";
 import { Link, useNavigate  } from "react-router-dom";
 import axios from 'axios';
@@ -42,19 +42,19 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                     <div className="pt-4">
                         {type === "signup" ? <LabelledInput label="Name" placeholder="Your Name" onChange={(e) => {
                             setPostInputs(c => ({
-                                ...postInputs,
+                                ...c,
                                 name: e.target.value
                             }))
                         }} /> : null}
                         <LabelledInput label="Username" placeholder="Username" onChange={(e) => {
                             setPostInputs(c => ({
-                                ...postInputs,
+                                ...c,
                                 username: e.target.value
                             }))
                         }} />
                         <LabelledInput label="Password" type={"password"} placeholder="Your Password" onChange={(e) => {
                             setPostInputs(c => ({
-                                ...postInputs,
+                                ...c,
                                 password: e.target.value
                             }))
                         }} />
